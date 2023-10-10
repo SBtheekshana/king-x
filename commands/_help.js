@@ -12,7 +12,7 @@ cmd({
             
             alias: ['ko'],
             category: "general",
-            react: "💝",
+            react: "🧑‍🚀",
             filename: __filename
         },
         async(Void, citel, text) => {
@@ -89,7 +89,7 @@ cmd({
 cmd({
             alias: ['මෙනූ', 'විධාන','නියොග','menu','help'],
             desc: "විධාන ලයිස්තුව",
-            react: "🧑‍🚀", 
+            react: "👻", 
         },
         async(Void, citel, text) => {
             await Void.sendPresenceUpdate('recording', citel.chat);
