@@ -20,9 +20,9 @@ Secktor.cmd({
     },
     async(Void, citel) => {
         var inital = new Date().getTime();
-        const { key } = await Void.sendMessage(citel.chat, {text: '```Ping!!!```'});
+        const { key } = await Void.sendMessage(citel.chat, {text: '```King-X Ping!!!```'});
         var final = new Date().getTime();
        // await Secktor.sleep(1000)
-       return await Void.sendMessage(citel.chat, {text: '*Pong*\n *' + (final - inital) + ' ms* ', edit: key});
+       return await Void.sendMessage(citel.chat, {text: '*KING-x_Pong_*\n *' + (final - inital) + ' ms* ', edit: key});
     }
 );
