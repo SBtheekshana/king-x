@@ -89,7 +89,7 @@ cmd({
 cmd({
             alias: ['මෙනූ', 'විධාන','නියොග','menu','help'],
             desc: "විධාන ලයිස්තුව",
-            react: "🧑‍🚀 "
+            react: "🧑‍🚀", 
         },
         async(Void, citel, text) => {
             await Void.sendPresenceUpdate('recording', citel.chat);
