@@ -103,11 +103,6 @@ cmd({
                 const vdf = Config.ownername
                 let total = await sck1.countDocuments()
                 let str = `
-
-                
-༺ Welcome to king-bot ༻
- ✾ Created by ${citel.pushName}
- ✾ Primary Owner Theekshana ™
  
 ┏━━━━━━━━━━━━━➣
 ┃
