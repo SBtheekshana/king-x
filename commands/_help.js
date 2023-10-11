@@ -103,18 +103,21 @@ cmd({
                 const vdf = Config.ownername
                 let total = await sck1.countDocuments()
                 let str = `
-
+༺ Welcome to king-bot ༻
+ ✾ Created by ${citel.pushName}
+ ✾ Primary Owner Theekshana ™
+ 
 ┏━━━━━━━━━━━━━➣
 ┃
 ┃ *Hellow* *${citel.pushName}*
 ┃
 ┃  ╭━━━━━━━━━🍁
 ┃  ┃ 🚴MY OWENR🚴
-┃  ┃     ${vdf}
+┃  ┃       ${vdf}
 ┃  ╰━━━━━━━━━🍃
 ┃  ╭━━━━━━━━━🍁
 ┃  ┃ 🕊️Commands🕊️ 
-┃  ┃  ${commands.length}
+┃  ┃     ${commands.length}
 ┃  ╰━━━━━━━━━🍃
 ┃  ╭━━━━━━━━━🍁
 ┃  ┃   🗓️ Today 🗓️
@@ -123,7 +126,7 @@ cmd({
 ┃  ╰━━━━━━━━━🍃
 ┃  ╭━━━━━━━━━🍁
 ┃  ┃ ⏳Uptime⏳
-┃  ┃${runtime(process.uptime())}
+┃  ┃     ${runtime(process.uptime())}
 ┃  ╰━━━━━━━━━🍃
 ┃  ╭━━━━━━━━━🍁
 ┃  ┃ 📝 Prefix 📝 
