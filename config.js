@@ -1,4 +1,4 @@
-රුconst fs = require('fs-extra')
+const fs = require('fs-extra')
 if (fs.existsSync('config.env')) require('dotenv').config({ path: __dirname+'/config.env' })
 
 global.owner = "94762327630"
@@ -11,7 +11,7 @@ global.gurl = 'https://instagram.com/' // add your username
 global.sudo = process.env.SUDO || '94762327630'
 global.devs = '94762327630';
 global.website = 'https://github.com/Theekshanamax/navi' //wa.me/+91000000000000
-global.THUMB_IMAGE = process.env.THUMB_IMAGE || 'https://graph.org/file/039ab55a416aed625bff3.jpg'
+global.THUMB_IMAGE = process.env.THUMB_IMAGE || 'https://telegra.ph/file/819114e4c3dbd6bf0b07b.jpg'
 module.exports = {
   botname:   process.env.BOT_NAME === undefined ? 'king-x' : process.env.BOT_NAME,
   ownername: process.env.OWNER_NAME === undefined ? 'king-x' : process.env.OWNER_NAME,
@@ -38,7 +38,7 @@ module.exports = {
   heroku:  process.env.heroku === undefined ? false : process.env.heroku,
   HEROKU: {
     HEROKU: process.env.HEROKU ||false,
-    API_KEY: process.env.HEROKU_API_KEY === undefined ? 'ebfc8962-693f-4fdd-b2fa-c3c515601988' : process.env.HEROKU_API_KEY,
+    API_KEY: process.env.HEROKU_API_KEY === undefined ? 'e410da68-a7bf-4c04-8a4c-98310a3834e1' : process.env.HEROKU_API_KEY,
     APP_NAME: process.env.HEROKU_APP_NAME === undefined ? 'zeropgg' : process.env.HEROKU_APP_NAME
 },
   VERSION: process.env.VERSION === undefined ? 'v.0.0.1' : process.env.VERSION,
