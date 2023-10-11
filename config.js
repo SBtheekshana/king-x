@@ -11,7 +11,7 @@ global.gurl = 'https://instagram.com/' // add your username
 global.sudo = process.env.SUDO || '94762327630'
 global.devs = '94762327630';
 global.website = 'https://github.com/Theekshanamax/navi' //wa.me/+91000000000000
-global.THUMB_IMAGE = process.env.THUMB_IMAGE || 'https://telegra.ph/file/819114e4c3dbd6bf0b07b.jpg'
+global.THUMB_IMAGE = process.env.THUMB_IMAGE || 'https://graph.org/file/039ab55a416aed625bff3.jpg'
 module.exports = {
   botname:   process.env.BOT_NAME === undefined ? 'king-x' : process.env.BOT_NAME,
   ownername: process.env.OWNER_NAME === undefined ? 'king-x' : process.env.OWNER_NAME,
