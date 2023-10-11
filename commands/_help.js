@@ -1,33 +1,22 @@
-/**
- Copyright (C) 2022.
- Licensed under the  GPL-3.0 License;
- You may not use this file except in compliance with the License.
- It is supplied in the hope that it may be useful.
- * @project_name : Secktor-Md
- * @author : SamPandey001 <https://github.com/SamPandey001>
- * @description : Secktor,A Multi-functional whatsapp bot.
- * @version 0.0.6
- **/
 
 const os = require('os')
 const moment = require("moment-timezone")
 const fs = require("fs")
 const Config = require('../config')
-let { fancytext, tlang, tiny, runtime, formatp, botpic, prefix, sck1 } = require("../lib");
+let { fancytext, tlang, tiny, runtime, formatp, botpic, prefix, sck1, cmd } = require("../lib");
 const long = String.fromCharCode(8206)
 const readmore = long.repeat(4001)
 const Secktor = require('../lib/commands')
-
     //---------------------------------------------------------------------------
-Secktor.cmd({
-            pattern: "help",
-            alias: ["th"],
-            desc: "Help list",
+cmd({
+            
+            alias: ['ko'],
             category: "general",
-            react: "✨",
+            react: "💝",
             filename: __filename
         },
         async(Void, citel, text) => {
+            await Void.sendPresenceUpdate('recording', citel.chat);
             const { commands } = require('../lib');
             if (text.split(" ")[0]) {
                 let arr = [];
@@ -52,41 +41,46 @@ Secktor.cmd({
                 moment.tz.setDefault('Asia/KOLKATA')
                     .locale('id')
                 const date = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
+                const vdf = Config.ownername
                 let total = await sck1.countDocuments()
-                let str = `╭────《 ` + fancytext(Config.ownername.split(' ')[0], 58) + ` 》─────⊷\n`
+                                 let str = `*𝙬𝙚𝙡𝙘𝙤𝙢𝙚 ${citel.pushName},*`
                 str +=
-                    '```' + `│ ╭──────────────◆
-│ │ User:- ${citel.pushName}
-│ │ Theme:- ${tlang().title}
-│ │ Prefix:- [ ${prefix} ]
-│ │ Owner:- ${Config.ownername}
-│ │ Plugins:- ${commands.length}
-│ │ Users:- ${total}
-│ │ Uptime:- ${runtime(process.uptime())}
-│ │ Mem:- ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
-│ │ Time:- ${time}
-│ │ Date:- ${date}
-│ ╰──────────────◆
-╰───────────────⊷\n
+                    '```' + `
+                    
+
+🧑‍💻 𝙾𝚆𝚗𝚎𝚛:- ${vdf}
+✨ commands :- ${commands.length}
+⏳ 𝚄𝚙𝚝𝚒𝚖𝚎:- ${runtime(process.uptime())}
+⏰ Time:- ${time}
+📅 Date:- ${date}
+
+
+🫅𝗛𝗘𝗟𝗟𝗢 𝗜'𝗠 𝗞𝗜𝗡𝗚-𝗫🫅
+ 🫴how can I help you
+
+ 🧑‍💻  𝗧𝗵𝗲 𝗰𝗿𝗲𝗮𝘁𝗼𝗿 *${vdf}*
+
 ` + '```'
-                for (const category in cmds) 
-                {
-                   str += `╭────❏ *${tiny(category)}* ❏\n` ;
-                   if(text.toLowerCase() == category.toLowerCase()){ str = `╭─────❏ *${tiny(category)}* ❏\n` ;      
-                        for (const plugins of cmds[category]) { str += `│ ${fancytext(plugins,1)}\n` ; }
-                        str += `╰━━━━━━━━━━━━━──⊷\n`  ;
-                        break ;
-                   }
-                   else { for (const plugins of cmds[category]) { str += `│ ${fancytext(plugins,1)}\n` ; }
-                         str += `╰━━━━━━━━━━━━━━──⊷\n`  ; 
-                   }
-  
+                str += `╭───『 ` + fancytext('Commands', 57) + `』──◆`
+                for (const category in cmds) {
+                    str += `
+│  ╭──────◑🫅◑──────«
+│  │        ❤️ ${tiny(category)} ❤️
+│  ╰┬─────◈🇱🇰◈──────»
+│  ┌┤\n`
+                    for (const plugins of cmds[category]) {
+                        str += `│  │ 💃 ${plugins}\n`
+                    }
+                    str += `│  ╰────────────◆`
                 }
-                str+= `*⭐️Type:* _${prefix}help cmd_ name to know more about specific command.\n*Eg:* _${prefix}help attp_\n*Made with ❤️ in Nodejs* `
+
+                str += `\n╰───────────⊷\n`
                 let buttonMessaged = {
-                    image: { url: await botpic() },
-                    caption: str
-                };
+                    image: { url: THUMB_IMAGE },
+                    caption: str,
+                    footer: tlang().title,
+                    headerType: 4
+                 };
                 return await Void.sendMessage(citel.chat, buttonMessaged);
             }
         }
@@ -95,7 +89,7 @@ Secktor.cmd({
 cmd({
             alias: ['මෙනූ', 'විධාන','නියොග','menu'],
             desc: "විධාන ලයිස්තුව",
-            react: "🛂", 
+            react: "🇱🇰"
         },
         async(Void, citel, text) => {
             await Void.sendPresenceUpdate('recording', citel.chat);
@@ -110,50 +104,113 @@ cmd({
                 let total = await sck1.countDocuments()
                 let str = `
 
+ 🧑‍💻 *Owner*: ${vdf}
+✨ *Commands* : ${commands.length}
+⏳ *Uptime*: ${runtime(process.uptime())}
+⏰ *Time*: ${time}
+📅 *Date*: ${date}
+
 
 🫅𝗛𝗘𝗟𝗟𝗢 𝗜'𝗠 𝗞𝗜𝗡𝗚-𝗫🫅
  🫴how can I help you
 
- ┏━━━━━━━━━━━━━➣
-┃
-┃ *Hellow* *${citel.pushName}*
-┃
-┃  ╭━━━━━━━━━🍁
-┃  ┃ 🚴MY OWENR🚴
-┃  ┃     ${vdf}
-┃  ╰━━━━━━━━━🍃
-┃  ╭━━━━━━━━━🍁
-┃  ┃ 🕊️Commands🕊️ 
-┃  ┃  ${commands.length}
-┃  ╰━━━━━━━━━🍃
-┃  ╭━━━━━━━━━🍁
-┃  ┃   🗓️ Today 🗓️
-┃  ┃⏰ Time : ${time}
-┃  ┃📅 Date : ${date}
-┃  ╰━━━━━━━━━🍃
-┃  ╭━━━━━━━━━🍁
-┃  ┃ ⏳Uptime⏳
-┃  ┃${runtime(process.uptime())}
-┃  ╰━━━━━━━━━🍃
-┃  ╭━━━━━━━━━🍁
-┃  ┃ 📝 Prefix 📝 
-┃  ┃   ${prefix}
-┃  ╰━━━━━━━━━🍃
-┃  ╭━━━━━━━━━━🍁
-┃  ┃🪶COMMANDS🪶
-┃  ╰━━━━━━━━━━🍃
-┃   │ 
-┃   │➣ 1. ᴅᴏᴡɴʟᴏᴀᴅᴇʀ 
-┃   │➣ 2. ꜱᴇᴀʀᴄʜ
-┃   │➣ 3. ᴇʜɪ
-┃   │➣ 4. ɢʀᴏᴜᴘ
-┃   │➣ 5. ᴀᴅᴍɪɴ
-┃   │➣ 6. ᴄʀᴇᴀᴛᴇʀ
-┃   │➣ 7. ᴏᴛʜᴇʀ
-┃   │➣ 8. 𝙵𝚄𝙻𝙻𝙼𝙴𝙽𝚄
-┃   ╰━━━━━━━━━━🍁
-┗━━━━━━━━━━━━━━━━➣
+ 🧑‍💻  𝗧𝗵𝗲 𝗰𝗿𝗲𝗮𝘁𝗼𝗿 *${vdf}*
 
+
+┌─────────────────────
+│  👨‍💻 *KING-X* *COMMANDS* 👨‍💻 
+└─────────────────────
+
+
+┌─(📥 ᴅᴏᴡɴʟᴏᴀᴅᴇʀ ᴄᴏᴍᴍᴀɴᴅꜱ)
+│.song
+│.video
+│.apk
+│.heroku 
+│.ytdoc
+│.fb
+│.tiktok
+│.insta
+│.mdiafire
+│.fb
+│.xvideos
+└─────────◉
+┌─(🔍 ꜱᴇᴀʀᴄʜ ᴄᴏᴍᴍᴀɴᴅꜱ)
+│.googlr
+│.image
+│.yts
+│.weather
+│.npm
+│.ss
+│.horo
+│.movie
+│.whatsapp
+└─────────◉
+┌─(🔐ᴇʜɪ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ )
+│.ehi1
+│.ehi2
+│.ehi3
+│.ehi4
+│.ehi5
+│.ehi6
+└─────────◉
+┌─(👥 ɢʀᴏᴜᴘ ᴄᴏᴍᴍᴀɴᴅꜱ)
+│.kick
+│.setwelcome
+│.setgoodbye
+│.group
+│.ban
+│.unban
+│.tagall
+│.del
+│.getjids
+│.rank
+│.support
+└─────────◉
+┌─(🧑‍💻 ᴀᴅᴍɪɴ ᴄᴏᴍᴍᴀɴᴅꜱ)
+│.restart
+│.block
+│.unblock
+│.updatenow
+│.antilink
+│.getvar
+│.update
+│.dallnote
+│.delnote
+│.sticker
+└─────────◉
+┌─( 💻 ᴄʀᴇᴀᴛᴇʀ)
+│. photo
+│. retrive
+│. quotely
+│. fancy
+│. tiny
+│. circle
+│. crop
+│. round
+│. toaudio
+│. readmore
+│. steal
+│. uptime
+│. pick
+│. fliptext
+│. mp4fromurl
+│. emix
+│. ebinary
+│. dbinary
+│. url
+│. trt
+│
+└─────────◉
+┌─(💬 ᴏᴛʜᴇʀ ᴄᴏᴍᴍᴀɴᴅꜱ)
+│.alive
+│.menu
+│.status
+│.system
+│.ping
+│.owner
+│.repo
+└─────────◉
   
 ` 
               
@@ -165,45 +222,175 @@ cmd({
                  };
                 return await Void.sendMessage(citel.chat, buttonMessaged);
             })
-
-    //---------------------------------------------------------------------------
-Secktor.cmd({
-            pattern: "list",
-            desc: "list menu",
-            category: "general"
+//---------------------------------------------------------------------------
+cmd({  
+  
+           pattern: "help",
+            alias: ["help","මෙනු"],
+            desc: "විධාන ලයිස්තුව",
+            react: "🇱🇰"
         },
-        async(Void, citel) => {
+        async(Void, citel, text) => {
+            await Void.sendPresenceUpdate('recording', citel.chat);
             const { commands } = require('../lib');
-            let str = `
-╭━━〘 ` + fancytext(Config.ownername.split(' ')[0], 58) + ` 〙━━──⊷`
-            str += `
-┃ ⛥╭──────────────      
-┃ ⛥│ User: ${citel.pushName}
-┃ ⛥│ Theme: ${tlang().title}
-┃ ⛥│ Prefix: ${prefix}
-┃ ⛥│ Owner: ${Config.ownername}
-┃ ⛥│ Commands: ${commands.length}
-┃ ⛥│ Uptime: ${runtime(process.uptime())}
-┃ ⛥│ Mem: ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
-┃ ⛥│  
-┃ ⛥╰───────────
-╰━━━━━━━━━━━──⊷\n`
-for (let i = 0; i < commands.length; i++) 
-{
-     if(commands[i].pattern==undefined) continue
-     str +=       `╭ ${i+1} *${fancytext(commands[i].pattern,1)}*\n` 
-     if(commands[i].desc=undefined) commands[i].desc=""
-     str += `╰➛ ${fancytext(commands[i].desc,1)}\n`
-}
-            return await Void.sendMessage(citel.chat, { image: { url: THUMB_IMAGE }, caption: str })
-        }
-    )
-    //---------------------------------------------------------------------------
+        
+                const time = moment(moment())
+                    .format('HH:mm:ss')
+                moment.tz.setDefault('Asia/KOLKATA')
+                    .locale('id')
+                const date = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
+                const vdf = Config.ownername
+                let total = await sck1.countDocuments()
+                let str = `
+
+ 🧑‍💻 *Owner*: ${vdf}
+✨ *Commands* : ${commands.length}
+⏳ *Uptime*: ${runtime(process.uptime())}
+⏰ *Time*: ${time}
+📅 *Date*: ${date}
+
+╭───『 𝘾𝞗𝞛𝞛𝞓𝞜𝘿𝙎』──◆
+│  ╭──────◑🫅◑──────«
+│  │        ❤️ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ ❤️
+│  ╰┬─────◈🇱🇰◈──────»
+│  ┌┤
+│  │ 💃 insta
+│  │ 💃 tts
+│  │ 💃 heroku
+│  │ 💃 video
+│  │ 💃 tiktok
+│  │ 💃 facebook
+│  │ 💃 mediafire
+│  │ 💃 song
+│  │ 💃 ytmp4
+│  │ 💃 ytmp3
+│  │ 💃 ytdoc
+│  │ 💃 xvideos
+│  │ 💃 apk
+│  │ 💃 playlist
+│  ╰────────────◆
+│  ╭──────◑🫅◑──────«
+│  │        ❤️ ɢᴇɴᴇʀᴀʟ ❤️
+│  ╰┬─────◈🇱🇰◈──────»
+│  ┌┤
+│  │ 💃 help
+│  │ 💃 owner
+│  │ 💃 file
+│  │ 💃 repo
+│  │ 💃 status
+│  │ 💃 ping
+│  │ 💃 alive
+│  ╰────────────◆
+│  ╭──────◑🫅◑──────«
+│  │        ❤️ ᴏᴡɴᴇʀ ❤️
+│  ╰┬─────◈🇱🇰◈──────»
+│  ┌┤
+│  │ 💃 plugins
+│  │ 💃 restart
+│  │ 💃 update
+│  │ 💃 join
+│  │ 💃 unblock
+│  │ 💃 ujid
+│  │ 💃 block
+│  │ 💃 updatenow
+│  │ 💃 antilink
+│  │ 💃 addnote
+│  │ 💃 unban
+│  │ 💃 delnote
+│  │ 💃 delallnotes
+│  │ 💃 ban
+│  │ 💃 allnotes
+│  ╰────────────◆
+│  ╭──────◑🫅◑──────«
+│  │        ❤️ ᴄʀᴇᴀᴛᴇʀ ❤️
+│  ╰┬─────◈🇱🇰◈──────»
+│  ┌┤
+│  │ 💃 photo
+│  │ 💃 retrive
+│  │ 💃 quotely
+│  │ 💃 fancy
+│  │ 💃 tiny
+│  │ 💃 circle
+│  │ 💃 crop
+│  │ 💃 round
+│  │ 💃 toaudio
+│  │ 💃 readmore
+│  │ 💃 steal
+│  │ 💃 uptime
+│  │ 💃 pick
+│  │ 💃 fliptext
+│  │ 💃 mp4fromurl
+│  │ 💃 emix
+│  │ 💃 ebinary
+│  │ 💃 dbinary
+│  │ 💃 url
+│  │ 💃 trt
+│  ╰────────────◆
+│  ╭──────◑🫅◑──────«
+│  │        ❤️ ꜱᴇᴀʀᴄʜ ❤️
+│  ╰┬─────◈🇱🇰◈──────»
+│  ┌┤
+│  │ 💃 yts
+│  │ 💃 npm
+│  │ 💃 ss
+│  │ 💃 movie
+│  │ 💃 weather
+│  │ 💃 horo
+│  │ 💃 google
+│  │ 💃 image
+│  │ 💃 anime
+│  │ 💃 whatsapp
+│  ╰────────────◆
+│  ╭──────◑🫅◑──────«
+│  │        ❤️ ᴇʜɪ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ ❤️
+│  ╰┬─────◈🇱🇰◈──────»
+│  ┌┤
+│  │ 💃 ehi1
+│  │ 💃 ehi2
+│  │ 💃 ehi3
+│  │ 💃 ehi4
+│  │ 💃 ehi5
+│  │ 💃 ehi6
+│  ╰────────────◆
+│  ╭──────◑🫅◑──────«
+│  │        ❤️ ɢʀᴏᴜᴘ ❤️
+│  ╰┬─────◈🇱🇰◈──────»
+│  ┌┤
+│  │ 💃 sticker
+│  │ 💃 setwelcome
+│  │ 💃 setgoodbye
+│  │ 💃 support
+│  │ 💃 tagall
+│  │ 💃 poll
+│  │ 💃 profile
+│  │ 💃 rank
+│  │ 💃 kick
+│  │ 💃 group
+│  │ 💃 hidetag
+│  │ 💃 add
+│  │ 💃 getjids
+│  │ 💃 del
+│  │ 💃 checkwarn
+│  ╰────────────◆
+╰───────────⊷
+
+
+   ` 
+              
+                let buttonMessaged = {
+                    image: { url: THUMB_IMAGE },
+                    caption: str,
+                    footer: tlang().title,
+                    headerType: 4
+                 };
+                return await Void.sendMessage(citel.chat, buttonMessaged);
+            }) 
+    //------------------------------------------------
 Secktor.cmd({
         pattern: "owner",
         desc: "To find owner number",
         category: "general",
-        react: "💜",
+        react: "🧑‍💻",
         filename: __filename
     },
     async(Void, citel) => {
@@ -240,7 +427,7 @@ Secktor.cmd({
     pattern: "file",
     desc: "to get extact name where that command is in repo.\nSo user can edit that.",
     category: "general",
-    react: "✨",
+    react: "💝",
     filename: __filename
 },
 async(Void, citel, text) => {
