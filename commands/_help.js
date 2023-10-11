@@ -21,7 +21,7 @@ const Secktor = require('../lib/commands')
     //---------------------------------------------------------------------------
 Secktor.cmd({
             pattern: "help",
-            alias: ["menu"],
+            alias: ["th"],
             desc: "Help list",
             category: "general",
             react: "✨",
@@ -91,6 +91,81 @@ Secktor.cmd({
             }
         }
     )
+    //---------------------------------------------------------------------------
+cmd({
+            alias: ['මෙනූ', 'විධාන','නියොග','menu'],
+            desc: "විධාන ලයිස්තුව",
+            react: "🛂", 
+        },
+        async(Void, citel, text) => {
+            await Void.sendPresenceUpdate('recording', citel.chat);
+            const { commands } = require('../lib');
+        
+                const time = moment(moment())
+                    .format('HH:mm:ss')
+                moment.tz.setDefault('Asia/KOLKATA')
+                    .locale('id')
+                const date = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
+                const vdf = Config.ownername
+                let total = await sck1.countDocuments()
+                let str = `
+
+
+🫅𝗛𝗘𝗟𝗟𝗢 𝗜'𝗠 𝗞𝗜𝗡𝗚-𝗫🫅
+ 🫴how can I help you
+
+ ┏━━━━━━━━━━━━━➣
+┃
+┃ *Hellow* *${citel.pushName}*
+┃
+┃  ╭━━━━━━━━━🍁
+┃  ┃ 🚴MY OWENR🚴
+┃  ┃     ${vdf}
+┃  ╰━━━━━━━━━🍃
+┃  ╭━━━━━━━━━🍁
+┃  ┃ 🕊️Commands🕊️ 
+┃  ┃  ${commands.length}
+┃  ╰━━━━━━━━━🍃
+┃  ╭━━━━━━━━━🍁
+┃  ┃   🗓️ Today 🗓️
+┃  ┃⏰ Time : ${time}
+┃  ┃📅 Date : ${date}
+┃  ╰━━━━━━━━━🍃
+┃  ╭━━━━━━━━━🍁
+┃  ┃ ⏳Uptime⏳
+┃  ┃${runtime(process.uptime())}
+┃  ╰━━━━━━━━━🍃
+┃  ╭━━━━━━━━━🍁
+┃  ┃ 📝 Prefix 📝 
+┃  ┃   ${prefix}
+┃  ╰━━━━━━━━━🍃
+┃  ╭━━━━━━━━━━🍁
+┃  ┃🪶COMMANDS🪶
+┃  ╰━━━━━━━━━━🍃
+┃   │ 
+┃   │➣ 1. ᴅᴏᴡɴʟᴏᴀᴅᴇʀ 
+┃   │➣ 2. ꜱᴇᴀʀᴄʜ
+┃   │➣ 3. ᴇʜɪ
+┃   │➣ 4. ɢʀᴏᴜᴘ
+┃   │➣ 5. ᴀᴅᴍɪɴ
+┃   │➣ 6. ᴄʀᴇᴀᴛᴇʀ
+┃   │➣ 7. ᴏᴛʜᴇʀ
+┃   │➣ 8. 𝙵𝚄𝙻𝙻𝙼𝙴𝙽𝚄
+┃   ╰━━━━━━━━━━🍁
+┗━━━━━━━━━━━━━━━━➣
+
+  
+` 
+              
+                let buttonMessaged = {
+                    image: { url: THUMB_IMAGE },
+                    caption: str,
+                    footer: tlang().title,
+                    headerType: 4
+                 };
+                return await Void.sendMessage(citel.chat, buttonMessaged);
+            })
+
     //---------------------------------------------------------------------------
 Secktor.cmd({
             pattern: "list",
