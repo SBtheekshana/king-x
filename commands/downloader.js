@@ -354,6 +354,7 @@ cmd({
      alias :  ['xxx','sex'], 
     desc: 'xnxxdl',
     category: 'gen',
+    react: "🍆",
     use: '<option>',
   }, async(Void,citel,text) => {
    if (!citel.isGroup) {
