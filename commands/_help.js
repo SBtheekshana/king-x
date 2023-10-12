@@ -225,6 +225,70 @@ cmd({
                  };
                 return await Void.sendMessage(citel.chat, buttonMessaged);
             }) 
+    //---------------------------------------------------------------------------
+cmd({
+            alias: ['මෙනූ', 'විධාන','නියොග','menu', 'manimenu'],
+            desc: "විධාන ලයිස්තුව",
+            react: "🛂"
+        },
+        async(Void, citel, text) => {
+            await Void.sendPresenceUpdate('recording', citel.chat);
+            const { commands } = require('../lib');
+        
+                const time = moment(moment())
+                    .format('HH:mm:ss')
+                moment.tz.setDefault('Asia/KOLKATA')
+                    .locale('id')
+                const date = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
+                const vdf = Config.ownername
+                let total = await sck1.countDocuments()
+                let str = `
+                
+
+  *Hellow* *${citel.pushName}*      
+  
+╭━━━━━━━━━━━━━━━➤
+┃ ╭━━━━━━━━━━━━━✾
+┃ ┃ 🔍ꜱᴇᴀʀᴄʜ ᴄᴏᴍᴍᴀɴᴅꜱ
+┃ ╰━━━━━━━━━━━━━✾
+┃ │ 
+┃ │ 🔍.google
+┃ │
+┃ │ 🔍.heroku 
+┃ │ 
+┃ │ 🔍. Image
+┃ │
+┃ │ 🔍.yts
+┃ │
+┃ │🔍.weather
+┃ │
+┃ │🔍.npm
+┃ │
+┃ │🔍.ss
+┃ │
+┃ │🔍.horo
+┃ │
+┃ │🔍.movie 
+┃ │
+┃ │🔍.whatsapp 
+┃ │
+┃ ╰━━━━━━━━━━━━━✾
+╰━━━━━━━━━━━━━━━━➤
+📝 *For the previous list Apply*
+
+.manimenu
+
+   ` 
+              
+                let buttonMessaged = {
+                    image: { url: THUMB_IMAGE },
+                    caption: str,
+                    footer: tlang().title,
+                    headerType: 4
+                 };
+                return await Void.sendMessage(citel.chat, buttonMessaged);
+            }) 
+
     //------------------------------------------------
 Secktor.cmd({
         pattern: "owner",
