@@ -339,7 +339,7 @@ cmd({
              use: '<add tiktok url.>' 
          }, 
   
-         async(Suhail, citel, text) => {
+         async(Void, citel, text) => { 
  if(!text) return await citel.reply(`*Uhh Please, Provide me tiktok Video Url*\n*_Ex .tiktok https://www.tiktok.com/@dakwahmuezza/video/7150544062221749531_*`);
  let txt = text ? text.split(" ")[0]:'';
  if (!/tiktok/.test(txt)) return await citel.send(`*Uhh Please, Give me Valid Tiktok Video Url!*`);
