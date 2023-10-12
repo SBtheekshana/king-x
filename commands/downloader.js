@@ -226,7 +226,7 @@ ZIP CODE : 10080
 
 5148121009748415|08|2025|245
 
-*By Praveen 🕵️*
+
 `,
 
                 footer: tlang().footer,
@@ -563,10 +563,10 @@ cmd({
     )
     //---------------------------------------------------------------------------
 cmd({
-        pattern: "ytmp3",
-       alias :['mp3','යුටියුබ්3'],
-        desc: "Downloads audio by yt link.",
-        category: "downloader",
+       pattern: "ytmp3",
+       alias :['m3','යුටියුබ්3'],
+       desc: "Downloads audio by yt link.",
+       category: "downloader",
        react: "🎼",
         use: '<yt video url>',
     },
