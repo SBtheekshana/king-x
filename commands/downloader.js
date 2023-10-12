@@ -330,7 +330,7 @@ await sleep(2000);
      )
     //---------------------------------------------------------------------------
 cmd({
-    pattern: 'xnxxsearch',
+    pattern: 'xnxx',
      alias :  ['xxxs ','sexs','xxxsearch'], 
     desc: 'xnxxsearch',
     category: 'gen',
@@ -343,6 +343,40 @@ cmd({
 	let res = await fg.xnxxSearch(text)
             let ff = res.result.map((v, i) => `${i + 1}┃ *Title* : ${v.title}\n*Link:* ${v.link}\n`).join('\n') 
               if (res.status) citel.reply(ff)
+   }
+ else{
+    return citel.reply('Thiis comand can not use in group.') 
+ }
+  });
+    //---------------------------------------------------------------------------
+cmd({
+    pattern: 'xnx',
+     alias :  ['xxx','sex'], 
+    desc: 'xnxxdl',
+    category: 'gen',
+    use: '<option>',
+  }, async(Void,citel,text) => {
+   if (!citel.isGroup) {
+    if (!text) return citel.reply(`Enter Url`)
+        if (!text.includes('xnxx.com')) return citel.reply(`Enter an xnxx link`)
+        const fg = require('api-dylux')
+        let xn = await fg.xnxxdl(text)
+        let cap =`🥶  *XNXX DL*
+    
+        ▢ *📌Title*: ${xn.result.title}
+        ▢ *⌚Duration:* ${xn.result.duration}
+        ▢ *🎞️Quality:* ${xn.result.quality}`
+
+             await citel.reply(cap) 
+	    return Void.sendMessage(citel.chat, { 
+                     document: { 
+                         url: xn.result.files.high, 
+                     }, 
+                     fileName: xn.result.title+'.mp4', 
+                     mimetype: 'video/mp4', 
+                 }, { 
+                     quoted: citel, 
+                 }) 
    }
  else{
     return citel.reply('Thiis comand can not use in group.') 
