@@ -166,7 +166,7 @@ cmd({
            pattern: "download ",
             alias: ["1","dm"],
             desc: "Download menu",
-            react: "👻"
+            react: "🥁"
         },
         async(Void, citel, text) => {
             await Void.sendPresenceUpdate('recording', citel.chat);
@@ -180,37 +180,34 @@ cmd({
                 const vdf = Config.ownername
                 let total = await sck1.countDocuments()
                 let str = `
-
-  *Hellow* *${citel.pushName}*
-
+*Hellow* *${citel.pushName}*
 ╭━━━━━━━━━━━━━━━➤
 ┃ ╭━━━━━━━━━━━━━✾
 ┃ ┃📥ᴅᴏᴡɴʟᴏᴀᴅᴇʀ ᴄᴏᴍᴍᴀɴᴅ
 ┃ ╰━━━━━━━━━━━━━✾
 ┃ │ 
-┃ │ 👻.song
+┃ │ 🏂.song
 ┃ │
-┃ │ 👻.heroku 
+┃ │ 🏂.heroku 
 ┃ │ 
-┃ │ 👻.ytmp3
+┃ │ 🏂.ytmp3
 ┃ │
-┃ │ 👻.ytmp4
+┃ │ 🏂.ytmp4
 ┃ │
-┃ │ 👻.insta
+┃ │ 🏂.insta
 ┃ │
-┃ │ 👻.xvideos
+┃ │ 🏂.xvideos
 ┃ │
-┃ │ 👻.mdiafire
+┃ │ 🏂.mdiafire
 ┃ │
-┃ │ 👻.ytdoc
+┃ │ 🏂.ytdoc
 ┃ │
-┃ │ 👻.video 
+┃ │ 🏂.video 
 ┃ ╰━━━━━━━━━━━━━✾
 ╰━━━━━━━━━━━━━━━━➤
 📝 *For the previous list Apply*
 
-✏ manimenu
-
+🏈 *.manimenu*
    ` 
               
                 let buttonMessaged = {
