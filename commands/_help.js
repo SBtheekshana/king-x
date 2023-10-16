@@ -89,7 +89,7 @@ cmd({
 cmd({
             alias: ['මෙනූ', 'විධාන','නියොග','menu', 'manimenu'],
             desc: "විධාන ලයිස්තුව",
-            react: "🛂"
+            react: "🚀"
         },
         async(Void, citel, text) => {
             await Void.sendPresenceUpdate('recording', citel.chat);
@@ -110,7 +110,7 @@ cmd({
  🧑‍💻  𝗧𝗵𝗲 𝗰𝗿𝗲𝗮𝘁𝗼𝗿 *${vdf}*
 ╭━━━━━━━━━━━━━➣
 ┃
-┃ 😘*Hellow* *${citel.pushName}*
+┃ 😘 *Hellow* *${citel.pushName}*
 ┃
 ┃  ╭━━━━━━━━━🍁
 ┃  ┃ 🚴MY OWENR🚴
@@ -148,7 +148,8 @@ cmd({
 ┃   ╰━━━━━━━━━━🍁
 ╰━━━━━━━━━━━━━━━━➣
 📝 *Reply to number If not, mention your name*.
- EX:*.1*/*.download*
+
+ 🏸 EX:*.1*/ *.download*
 ` 
               
                 let buttonMessaged = {
