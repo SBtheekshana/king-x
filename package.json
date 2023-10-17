@@ -1,17 +1,17 @@
 {
-               "name": "VAJIRA-MD",
-               "version": "1.2.2",
-               "description": "Multi device whatsapp bot by VajiraTechInfo.",
+               "name": "secktor-md",
+               "version": "0.0.7",
+               "description": "Multi device whatsapp bot by SamPandey001.",
                "main": "lib/client.js",
                "type": "commonjs",
                "license": "GPL-3.0",
    "scripts": {
-                "start": "pm2 start lib/client.js --deep-monitoring --attach --name Suhail-Md",
-                "stop": "pm2 stop Suhail-Md"
+                "start": "pm2 start lib/client.js --deep-monitoring --attach --name secktor",
+                "stop": "pm2 stop secktor"
                 },
-               "author": "VajiraTechInfo",
+               "author": "SamPandey001",
               "dependencies": {
-                       "@sampandey001/baileys": "latest",
+                       "@sampandey001/baileys": "latest", 
                        "@adiwajshing/keyed-db": "^0.2.4",
                        "awesome-phonenumber": "^3.3.0",
                        "anime-character-random": "latest",
@@ -28,13 +28,14 @@
                        "dotenv": "^16.0.0",
                        "discord-xp": "^1.1.16",
                        "mongoose": "^6.2.1",
-                       "mumaker": "^2.0.0",
-                       "google-it": "^1.6.4",
-                       "async-g-i-s": "^1.4.0",
+                       "mumaker": "^1.0.0",
+                       "google-it": "^1.6.2",
                        "file-type": "^16.5.3",
                        "form-data": "^4.0.0",
                        "ffmpeg": "^0.0.4",
                        "fluent-ffmpeg": "^2.1.2",
+                       "heroku-client": "3.1.0",
+                       "async-g-i-s": "^1.4.0",
                        "human-readable": "^0.2.1",
                        "jimp": "^0.16.1",
                        "jsdom": "^16.4.0",
@@ -47,21 +48,15 @@
                        "node-webpmux": "^3.1.0",
                        "google-tts-api": "^2.0.2",
                        "path": "^0.12.7",
-               "qrcode-terminal": "^0.12.0",
-                "aptoide-scraper":"^1.0.1",
-                "fb-info-video":"^1.0.2",
-                "heroku-client":"3.1.0",
-                "got":"12.6.0",
-                "acrcloud": "^1.4.0",
                        "request": "^2.88.2",
-                       "simple-git": "^3.15.1",
+                       "simple-git": "^3.16.1",
                        "@shineiichijo/marika": "^2.0.3",           
                        "translatte": "^3.0.1",
                        "util": "^0.12.4",           
                        "secktor-pack": "latest",
-                       "ytdl-secktor": "^0.0.1-development",
-                       "youtubei.js" : "latest",
+                       "ytdl-secktor": "latest",
                        "pastebin-js": "latest",
+                       "fb-info-video":"^1.0.2",
                        "wa-sticker-formatter": "^4.3.2"
                       },
                   "directories": {
@@ -73,10 +68,10 @@
                     },
                  "repository": {
                  "type": "git",
-                 "url": "git+https://github.com/vajirabot1/KING-VAJIRA-MD.git"
+                 "url": "git+https://github.com/SamPandey001/Secktor-Md.git"
                   },
                  "bugs": {
-                 "url": "https://github.com/vajirabot1/KING-VAJIRA-MD/issues"
+                 "url": "https://github.com/SamPandey001/Secktor-Md/issues"
                   },
-                 "homepage": "https://github.com/vajirabot1/KING-VAJIRA-MD#readme"
+                 "homepage": "https://github.com/SamPandey001/Secktor-Md#readme"
                   }
