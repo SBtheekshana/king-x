@@ -87,7 +87,84 @@ cmd({
     }
 )
 //---------------------------------------------------------------------------
+cmd({
+            pattern: "apk",
+            desc: "Downloads apks  .",
+            category: "downloader",
+	    react: "✅",
+            filename: __filename,
+            use: '<add sticker url.>',
+        },
 
+        async(Void, citel, text) => {
+       if (!text) return citel.reply(`*Need Playstore App Name*`)
+try {
+let result = await download(text)
+ const applink = result.dllink
+    const getname = result.name
+    const icon = result.icon
+    const lastupdate = result.lastup
+    const packagename = result.package
+    const size = result.size
+      await Void.sendMessage(citel.chat, {
+        image: {
+            url: icon,  
+        },
+        caption: `
+        \n🍁 APK DOWNLOADER✔️
+        \n⏳ *Playstore Download*
+        
+        \n📲 *App name:* ${getname}
+        
+        \n📩 *Last update:* ${lastupdate}
+        
+        \n🖥️ *Package name:* ${packagename}
+        
+        \n📊 *File size:* ${size}`,
+    })
+    return Void.sendMessage(citel.chat, {
+        document: {
+            url: applink,
+        },
+        mimetype: "application/vnd.android.package-archive",
+        fileName: getname,
+    }, {
+        quoted: citel,
+    });
+  } catch (err) {
+    console.error(err);
+    citel.reply(`❌ An error occurred while processing your request. Please try again later.${err}`);
+  }
+	
+	
+	
+	
+	
+	
+	/*
+  if(!text) return citel.reply(`*_Please Give Me App Name_*`);
+let searc = await search(text);
+//console.log(searc);
+let data = await download(searc[0].id);
+//console.log(data);
+
+     let  inf  ="App Name : " +data.name;
+         inf +="\n*App id        :* " +data.package;
+         inf +="\n*App id        :* " +data.lastup;
+         inf +="\n*App Size     :* " +data.size;
+        // inf +="\n*App Link     :* " +data.dllink;
+         
+                        let buttonMessage = {
+                        document: {url : data.dllink},
+                        mimetype: 'application/vnd.android.package-archive',
+                        fileName: data.name+`.apk`,
+                        caption : inf
+                        
+                    }
+                 Void.sendMessage(citel.chat, buttonMessage, { quoted: citel })
+*/}
+)
+//---------------------------------------------------------------------------
 cmd({
 
             pattern: "heroku",
