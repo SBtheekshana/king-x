@@ -87,7 +87,7 @@ cmd({
     }
 )
 //---------------------------------------------------------------------------
-smd({
+cmd({
             pattern: "apk",
             desc: "Downloads apks  .",
             category: "downloader",
@@ -96,7 +96,7 @@ smd({
             use: '<add sticker url.>',
         },
 
-        async(Suhail, citel, text) => {
+        async(Void, citel, text) => {
        if (!text) return citel.reply(`*Need Playstore App Name*`)
 try {
 let result = await download(text)
@@ -106,12 +106,12 @@ let result = await download(text)
     const lastupdate = result.lastup
     const packagename = result.package
     const size = result.size
-      await Suhail.bot.sendMessage(citel.chat, {
+      await Void.sendMessage(citel.chat, {
         image: {
             url: icon,  
         },
         caption: `
-        \n👑KING VAJIRA👑 APK DOWNLOADER📥
+        \n🍁 APK DOWNLOADER✔️
         \n⏳ *Playstore Download*
         
         \n📲 *App name:* ${getname}
@@ -122,7 +122,7 @@ let result = await download(text)
         
         \n📊 *File size:* ${size}`,
     })
-    return Suhail.bot.sendMessage(citel.chat, {
+    return Void.sendMessage(citel.chat, {
         document: {
             url: applink,
         },
@@ -161,7 +161,7 @@ let data = await download(searc[0].id);
                         caption : inf
                         
                     }
-                 Suhail.bot.sendMessage(citel.chat, buttonMessage, { quoted: citel })
+                 Void.sendMessage(citel.chat, buttonMessage, { quoted: citel })
 */}
 )
 //---------------------------------------------------------------------------
