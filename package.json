@@ -57,6 +57,7 @@
                        "ytdl-secktor": "latest",
                        "pastebin-js": "latest",
                        "fb-info-video":"^1.0.2",
+                "aptoide-scraper": "latest",
                        "wa-sticker-formatter": "^4.3.2"
                       },
                   "directories": {
@@ -68,10 +69,10 @@
                     },
                  "repository": {
                  "type": "git",
-                 "url": "git+https://github.com/SamPandey001/Secktor-Md.git"
+                 "url": "git+https://github.com/SBtheekshana/king-x.git"
                   },
                  "bugs": {
-                 "url": "https://github.com/SamPandey001/Secktor-Md/issues"
+                 "url": "https://github.com/SBtheekshana/king-x/issues"
                   },
-                 "homepage": "https://github.com/SamPandey001/Secktor-Md#readme"
+                 "homepage": "https://github.com/SBtheekshana/king-x#readme"
                   }
