@@ -87,6 +87,10 @@ cmd({
     }
 )
 //---------------------------------------------------------------------------
+cmd({ pattern: "glow", category: "logo", desc: "Some text to image feature with various styles.",filename: __filename, }, async(Void, msg, text, {cmdName}) => {
+        if (!text) return msg.reply(`*_Example : ${prefix+cmdName} Vajira_*`);
+        return await textToLogoGenerator(Void, msg, 'free-advanced-glow-text-effect-873' , text )
+    })
 //------------------------------------------------------—--------------------
 cmd({
 
