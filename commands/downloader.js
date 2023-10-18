@@ -541,11 +541,9 @@ cmd({
                 citel.reply(`❌ File size bigger than 100mb.`);
             }
             fs.unlinkSync(`./${randomName}`);
-            
-
-
+           
         }
-    )
+   )
     //----------------------------------------------------------------------
 cmd({
             pattern: "ytmp4",
