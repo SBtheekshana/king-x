@@ -30,24 +30,24 @@ cmd({pattern: "save",desc: "Save Message to log number",category: "whatsapp",rea
    let KING_X_num = await Void.decodeJid(msg.user)
    return await forwardMessage( msg, cmdName )
 })///================================================================================
-smd({ on: "text" }, async (Suhail,msg,text)=> {
+cmd({ on: "text" }, async (Void,msg,text)=> {
    if(msg.quoted && msg.text.toLowerCase().includes("send") ){
        let KING_X_num = await Suhail.bot.decodeJid(msg.user)
-       if(msg.quoted.sender === sᴜʜᴀɪʟ_ᴍᴅ_num && msg.quoted.chat === 'status@broadcast' ){ return await forwardMessage(msg.chat, Suhail.bot, msg, 'send' ); }
+       if(msg.quoted.sender === KING_X_num && msg.quoted.chat === 'status@broadcast' ){ return await forwardMessage(msg.chat, Void, msg, 'send' ); }
    }
 })//==================================================================
 
-smd({pattern: "pp",desc: "Set profile picture",category: "whatsapp",react: "⚙️",use: '<reply to image>', filename: __filename,},
-async(Suhail, msg,text,{cmdName , isCreator}) => {
+cmd({pattern: "pp",desc: "Set profile picture",category: "whatsapp",react: "⚙️",use: '<reply to image>', filename: __filename,},
+async(Void, msg,text,{cmdName , isCreator}) => {
    if(!isCreator) return await msg.send(tlang().owner);if (!msg.quoted) return await msg.reply("*Reply to an image, dear*");
    if(msg.quoted.mtype !='imageMessage') return await msg.reply("*_Uhh please, Reply to an image._*");    
-   const KING_X_num = await Suhail.bot.decodeJid(msg.user); return await updateProfilePicture(Suhail , sᴜʜᴀɪʟ_ᴍᴅ_num , msg , 'pp' );
+   const KING_X_num = await Void.decodeJid(msg.user); return await updateProfilePicture(msg , 'pp' );
  })
-smd({ pattern: "fullpp", desc: "Set full screen profile picture", category: "whatsapp",react: "⚙️", use: '<reply to image>', filename: __filename,},
- async(Suhail, msg,text,{cmdName , isCreator}) => {
+cmd({ pattern: "fullpp", desc: "Set full screen profile picture", category: "whatsapp",react: "⚙️", use: '<reply to image>', filename: __filename,},
+ async(Void, msg,text,{cmdName , isCreator}) => {
    if(!isCreator) return await msg.send(tlang().owner);if (!msg.quoted) return await msg.reply("*Reply to an image, sir*");
    if(msg.quoted.mtype !='imageMessage') return await msg.reply("*_Uhh please, Reply to an image._*");
-   const KING_X_num = await Suhail.bot.decodeJid(msg.user); return await updateProfilePicture(Suhail , sᴜʜᴀɪʟ_ᴍᴅ_num , msg , 'fullpp' );    
+   const KING_X_num = await Void.decodeJid(msg.user); return await updateProfilePicture( msg , 'fullpp' );    
 });
 
 
