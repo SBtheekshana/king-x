@@ -224,7 +224,7 @@ cmd({
 cmd({
             alias: ['search','sc','2'],
             desc: "searching",
-            react: "🛂"
+            react: "🎷"
         },
         async(Void, citel, text) => {
             await Void.sendPresenceUpdate('recording', citel.chat);
@@ -267,8 +267,7 @@ cmd({
 ╰━━━━━━━━━━━━━━━━➤
 📝 *For the previous list Apply*
 
-✏ manimenu
-
+🏈 *.manimenu*
    ` 
               
                 let buttonMessaged = {
