@@ -483,13 +483,12 @@ cmd({
 
         }
     )
-    //---------------------------------------------------------------------------
+//---------------------------------------------------------------------------
 cmd({
-            pattern: "song",
-            alias :['audio','සිංදු'],
+            pattern: "audio",
+            alias :['song'],
             desc: "Downloads audio from youtube.",
             category: "downloader",
-            react: "🎶",
             filename: __filename,
             use: '<text>',
         },
@@ -525,14 +524,14 @@ cmd({
                     headerType: 4,
                     contextInfo: {
                         externalAdReply: {
-                            title: titleYt,
-                            body: citel.pushName,
-                            renderLargerThumbnail: true,
-                            thumbnailUrl: search.all[0].thumbnail,
-                            mediaUrl: text,
-                            mediaType: 1,
-                            thumbnail: await getBuffer(search.all[0].thumbnail),
-                            sourceUrl: text,
+                            *🔮title*: 🎶titleYt,
+                            *🧚body*: citel.pushName,
+                            📤renderLargerThumbnail: true,
+                            *📦thumbnailUrl*: search.all[0].thumbnail,
+                            *🪀mediaUrl*: text,
+                            *🎶mediaType*: 1,
+                            *👤thumbnail*: await getBuffer(search.all[0].thumbnail),
+                            *🔗sourceUrl*: text,
                         },
                     },
                 }
@@ -547,8 +546,7 @@ cmd({
 
         }
     )
-    //---------------------------------------------------------------------------
-
+    //----------------------------------------------------------------------
 cmd({
             pattern: "ytmp4",
             alias :['mp4','යුටියුබ්4'],
