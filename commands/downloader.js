@@ -485,10 +485,11 @@ cmd({
     )
 //---------------------------------------------------------------------------
 cmd({
-            pattern: "audio",
-            alias :['song'],
+            pattern: "song",
+            alias :['audio','සිංදු'],
             desc: "Downloads audio from youtube.",
             category: "downloader",
+            react: "🎶",
             filename: __filename,
             use: '<text>',
         },
@@ -511,27 +512,12 @@ cmd({
             await new Promise((resolve, reject) => {
                 stream.on("error", reject);
                 stream.on("finish", resolve);
-            });
-
-            let stats = fs.statSync(`./${randomName}`);
-            let fileSizeInBytes = stats.size;
-            let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024);
-            if (fileSizeInMegabytes <= dlsize) {
-                let buttonMessage = {
-                    audio: fs.readFileSync(`./${randomName}`),
-                    mimetype: 'audio/mpeg',
-                    fileName: titleYt + ".mp3",
-                    headerType: 4,
-                    contextInfo: {
-                        externalAdReply: {
-                            *🔮title*: 🎶titleYt,
-                            *🧚body*: citel.pushName,
-                            📤renderLargerThumbnail: true,
-                            *📦thumbnailUrl*: search.all[0].thumbnail,
-                            *🪀mediaUrl*: text,
-                            *🎶mediaType*: 1,
-                            *👤thumbnail*: await getBuffer(search.all[0].thumbnail),
-                            *🔗sourceUrl*: text,
+            => info.audioBitrate == 160 || info.audioBitrate == 128,
+                })
+                .pipe(fs.createWriteStream(`./${randomName}`));
+            await new Promise((resolve, reject) => {
+                stream.on("error",: await getBuffer(search.all[0].thumbnail),
+                            sourceUrl: text,
                         },
                     },
                 }
@@ -541,9 +527,11 @@ cmd({
                 citel.reply(`❌ File size bigger than 100mb.`);
             }
             fs.unlinkSync(`./${randomName}`);
-           
+            
+
+
         }
-   )
+    ) 
     //----------------------------------------------------------------------
 cmd({
             pattern: "ytmp4",
