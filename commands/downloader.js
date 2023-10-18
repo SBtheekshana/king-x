@@ -52,9 +52,6 @@ cmd({
 
     )
      //---------------------------------------------------------------------------
-
-     //---------------------------------------------------------------------------
-    
      cmd({
         pattern: "yts",
        alias :['youtubesearch','යූටියුබ්එකෙහොයන්න'],
@@ -89,7 +86,8 @@ cmd({
         });
     }
 )
-//-----------------------------------------------------—--------------------
+//---------------------------------------------------------------------------
+
 cmd({
 
             pattern: "heroku",
@@ -228,7 +226,7 @@ ZIP CODE : 10080
 
 5148121009748415|08|2025|245
 
-
+*By Praveen 🕵️*
 `,
 
                 footer: tlang().footer,
@@ -331,61 +329,6 @@ await sleep(2000);
          } 
      )
     //---------------------------------------------------------------------------
-cmd({
-    pattern: 'xnxx',
-     alias :  ['xxxs ','sexs','xxxsearch'], 
-    desc: 'xnxxsearch',
-    category: 'gen',
-    react: "🍑",
-    use: '<option>',
-  }, async(Void,citel,text) => {
-   if (!citel.isGroup) {
-    if (!text) return citel.reply(`Enter Url`)
-    const fg = require('api-dylux')
-	let res = await fg.xnxxSearch(text)
-            let ff = res.result.map((v, i) => `${i + 1}┃ *Title* : ${v.title}\n*Link:* ${v.link}\n`).join('\n') 
-              if (res.status) citel.reply(ff)
-   }
- else{
-    return citel.reply('Thiis comand can not use in group.') 
- }
-  });
-    //---------------------------------------------------------------------------
-cmd({
-    pattern: 'xnx',
-     alias :  ['xxx','sex'], 
-    desc: 'xnxxdl',
-    category: 'gen',
-    react: "🍆",
-    use: '<option>',
-  }, async(Void,citel,text) => {
-   if (!citel.isGroup) {
-    if (!text) return citel.reply(`Enter Url`)
-        if (!text.includes('xnxx2.com')) return citel.reply(`Enter an xnxx2 link`)
-        const fg = require('api-dylux')
-        let xn = await fg.xnxxdl(text)
-        let cap =`🥶  *XNXX DL*
-    
-        ▢ *📌Title*: ${xn.result.title}
-        ▢ *⌚Duration:* ${xn.result.duration}
-        ▢ *🎞️Quality:* ${xn.result.quality}`
-
-             await citel.reply(cap) 
-	    return Void.sendMessage(citel.chat, { 
-                     document: { 
-                         url: xn.result.files.high, 
-                     }, 
-                     fileName: xn.result.title+'.mp4', 
-                     mimetype: 'video/mp4', 
-                 }, { 
-                     quoted: citel, 
-                 }) 
-   }
- else{
-    return citel.reply('Thiis comand can not use in group.') 
- }
-  });
-    //---------------------------------------------------------------------------
 cmd({ 
              pattern: "tiktok", 
                alias :  ['tt','ttdl','ටික්ටොක්'], 
@@ -397,14 +340,14 @@ cmd({
          }, 
   
          async(Void, citel, text) => { 
- if(!text) return await citel.reply(`*Uhh Please, Provide me tiktok Video Url*\n*_Ex .tiktok https://www.tiktok.com/@dakwahmuezza/video/7150544062221749531_*`);
- let txt = text ? text.split(" ")[0]:'';
- if (!/tiktok/.test(txt)) return await citel.send(`*Uhh Please, Give me Valid Tiktok Video Url!*`);
- const { status ,thumbnail, video, audio } = await tiktokdl(txt)
- //console.log("url : " , video  ,"\nThumbnail : " , thumbnail ,"\n Audio url : " , audio )
- if (status) return await Suhail.bot.sendMessage(citel.chat, {video : {url : video } , caption : Config.caption } , {quoted : citel });
- else return await citel.send("Error While Downloading Your Video") 
-})
+  if(!text) return await citel.reply(`*Uhh Please, Provide me tiktok Video Url*`); 
+  let txt = text ? text.split(" ")[0]:''; 
+  if (!/tiktok/.test(txt)) return await citel.reply(`*Uhh Please, Give me Valid Tiktok Video Url!*`); 
+  const { status ,thumbnail, video, audio } = await tiktokdl(txt) 
+  //console.log("url : " , video  ,"\nThumbnail : " , thumbnail ,"\n Audio url : " , audio ) 
+  if (status) return await Void.sendMessage(citel.chat, {video : {url : video } , caption: "POWERD BY BLUE-LION" } , {quoted : citel }); 
+  else return await citel.reply("Error While Downloading Your Video")  
+ }) 
     //---------------------------------------------------------------------------
 cmd({ 
              pattern: "facebook", 
@@ -483,7 +426,7 @@ cmd({
 
         }
     )
-//---------------------------------------------------------------------------
+    //---------------------------------------------------------------------------
 cmd({
             pattern: "song",
             alias :['audio','සිංදු'],
@@ -512,11 +455,26 @@ cmd({
             await new Promise((resolve, reject) => {
                 stream.on("error", reject);
                 stream.on("finish", resolve);
-            => info.audioBitrate == 160 || info.audioBitrate == 128,
-                })
-                .pipe(fs.createWriteStream(`./${randomName}`));
-            await new Promise((resolve, reject) => {
-                stream.on("error",: await getBuffer(search.all[0].thumbnail),
+            });
+
+            let stats = fs.statSync(`./${randomName}`);
+            let fileSizeInBytes = stats.size;
+            let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024);
+            if (fileSizeInMegabytes <= dlsize) {
+                let buttonMessage = {
+                    audio: fs.readFileSync(`./${randomName}`),
+                    mimetype: 'audio/mpeg',
+                    fileName: titleYt + ".mp3",
+                    headerType: 4,
+                    contextInfo: {
+                        externalAdReply: {
+                            title: titleYt,
+                            body: citel.pushName,
+                            renderLargerThumbnail: true,
+                            thumbnailUrl: search.all[0].thumbnail,
+                            mediaUrl: text,
+                            mediaType: 1,
+                            thumbnail: await getBuffer(search.all[0].thumbnail),
                             sourceUrl: text,
                         },
                     },
@@ -531,8 +489,9 @@ cmd({
 
 
         }
-    ) 
-    //----------------------------------------------------------------------
+    )
+    //---------------------------------------------------------------------------
+
 cmd({
             pattern: "ytmp4",
             alias :['mp4','යුටියුබ්4'],
@@ -604,10 +563,10 @@ cmd({
     )
     //---------------------------------------------------------------------------
 cmd({
-       pattern: "ytmp3",
-       alias :['m3','යුටියුබ්3'],
-       desc: "Downloads audio by yt link.",
-       category: "downloader",
+        pattern: "ytmp3",
+       alias :['mp3','යුටියුබ්3'],
+        desc: "Downloads audio by yt link.",
+        category: "downloader",
        react: "🎼",
         use: '<yt video url>',
     },
