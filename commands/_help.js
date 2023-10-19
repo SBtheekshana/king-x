@@ -220,6 +220,61 @@ cmd({
                  };
                 return await Void.sendMessage(citel.chat, buttonMessaged);
             }) 
+//---------------------------------------------------------------------------
+cmd({  
+  
+           pattern: "ehi",
+            alias: ["3","ei"],
+            desc: "Download menu",
+            react: "🥁"
+        },
+        async(Void, citel, text) => {
+            await Void.sendPresenceUpdate('recording', citel.chat);
+            const { commands } = require('../lib');
+        
+                const time = moment(moment())
+                    .format('HH:mm:ss')
+                moment.tz.setDefault('Asia/KOLKATA')
+                    .locale('id')
+                const date = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
+                const vdf = Config.ownername
+                let total = await sck1.countDocuments()
+                let str = `
+*Hellow* *${citel.pushName}*
+
+╭━━━━━━━━━━━━━━━➤
+┃ ╭━━━━━━━━━━━━━✾
+┃ ┃    🧙‍♂️ 𝗘𝗛𝗜
+┃ ╰━━━━━━━━━━━━━✾
+┃ │ 
+┃ │ 💙⃟🤺⃦៚.𝚎𝚑𝚒1
+┃ │
+┃ │ 💙⃟🤺⃦៚.𝚎𝚑𝚒2
+┃ │ 
+┃ │ 💙⃟🤺⃦៚.𝚎𝚑𝚒3
+┃ │
+┃ │ 💙⃟🤺⃦៚.𝚎𝚑𝚒4
+┃ │
+┃ │ 💙⃟🤺⃦៚.𝚎𝚑𝚒5
+┃ │
+┃ │ 💙⃟🤺⃦៚.𝚎𝚑𝚒6
+┃ │
+┃ ╰━━━━━━━━━━━━━✾
+╰━━━━━━━━━━━━━━━━➤
+📝 *For the previous list Apply*
+
+🏈 *.manimenu*
+   ` 
+              
+                let buttonMessaged = {
+                    image: { url: THUMB_IMAGE },
+                    caption: str,
+                    footer: tlang().title,
+                    headerType: 4
+                 };
+                return await Void.sendMessage(citel.chat, buttonMessaged);
+            }) 
+    //---------------------------------------------------------------------------
     //---------------------------------------------------------------------------
 cmd({
             alias: ['search','sc','2'],
