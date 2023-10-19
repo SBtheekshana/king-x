@@ -118,8 +118,8 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
      )
      //---------------------------------------------------------------------------
  cmd({
-             pattern: "uptime",
-             alias: ["runtime"],
+             pattern: "runtime",
+             alias: ["uptime"],
              desc: "Tells runtime/uptime of bot.",
              category: "creater",
 	     react: "⏳",
@@ -127,7 +127,7 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
          },
          async(Void, citel, text) => {
              const upt = runtime(process.uptime())
-             return citel.reply(`Uptime of ${tlang().title}: ${upt}`)
+             return citel.reply(`⏰ runtime of ${tlang().title}: ${upt} ඔච්චර තමයි 😒`)
          }
      )
      //---------------------------------------------------------------------------
