@@ -127,7 +127,7 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
          },
          async(Void, citel, text) => {
              const upt = runtime(process.uptime())
-             return citel.reply(`⏰ runtime of ${tlang().title}: ${upt} ඔච්චර තමයි 😒`)
+             return citel.reply(`⏰ *runtime* of ${tlang().title}: ${upt} ඔච්චර තමයි... 😒`)
          }
      )
      //---------------------------------------------------------------------------
