@@ -149,7 +149,7 @@ cmd({
 ╰━━━━━━━━━━━━━━━━➣
 📝 *Reply to number If not, mention your name*.
 
- 🏸 EX:*.1*/ *.download*
+ 🏸 EX:*.1*/ *.download*/ *.1️⃣*
 ` 
               
                 let buttonMessaged = {
