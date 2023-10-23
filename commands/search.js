@@ -206,7 +206,29 @@ cmd({
   catch(e){  
   console.log(e)  
   }})
-//-----------------------------------------------------------------------
+//--------------------------------------------------------------------------
+cmd({  
+      pattern: "hiru",  
+      alias: ["8","hn"],  
+      react: "📰",  
+      desc: "hiru",  
+      category: "news",  
+      use: '.hirunews',  
+      filename: __filename  
+  },  
+  async(Void, citel) => {  
+  try{  
+  const nasa = await fetchJson(`https://queen-api.onrender.com/api/news/hiru-news`);  
+  
+            const images = `${nasa.result.image}`  
+             const title = `${nasa.result.title}` 
+             const news = `${nasa.result.description}`  
+  
+  await Void.sendMessage(citel.chat,  { image: { url: images }, caption: `\n*${ title }*\n\n _${news}._\n\n*`}, { quoted: citel })  
+  }  
+  catch(e){  
+  console.log(e)  
+  }})
 //--------------------------------------------------------------------------
 cmd({  
       pattern: "nasa",  
