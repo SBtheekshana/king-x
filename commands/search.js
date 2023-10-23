@@ -183,10 +183,34 @@ cmd({
         })
     }
 )
+
+//--------------------------------------------------------------------------
+cmd({  
+      pattern: "sirasa",  
+      alias: ["04","sn"],  
+      react: "🛸",  
+      desc: "nasa",  
+      category: "news",  
+      use: '.hirunews',  
+      filename: __filename  
+  },  
+  async(Void, citel) => {  
+  try{  
+  const nasa = await fetchJson(`https://queen-api.onrender.com/api/news/sirasa-news`);  
+  
+            const images = `${nasa.result.image}`  
+             const title = `${nasa.result.title}` 
+             const news = `${nasa.result.description}`  
+  
+  await Void.sendMessage(citel.chat,  { image: { url: images }, caption: `\n*${ title }*\n\n _${news}._\n\n*`}, { quoted: citel })  
+  }  
+  catch(e){  
+  console.log(e)  
+  }})
 //--------------------------------------------------------------------------
 cmd({  
       pattern: "esana",  
-      alias: ["6","en"],  
+      alias: ["03","en"],  
       react: "📰",  
       desc: "esana",  
       category: "news",  
@@ -209,7 +233,7 @@ cmd({
 //--------------------------------------------------------------------------
 cmd({  
       pattern: "hiru",  
-      alias: ["8","hn"],  
+      alias: ["02","hn"],  
       react: "📰",  
       desc: "hiru",  
       category: "news",  
@@ -232,7 +256,7 @@ cmd({
 //--------------------------------------------------------------------------
 cmd({  
       pattern: "nasa",  
-      alias: ["5","ns"],  
+      alias: ["01","ns"],  
       react: "🛸",  
       desc: "nasa",  
       category: "news",  
