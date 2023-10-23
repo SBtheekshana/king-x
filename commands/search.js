@@ -185,25 +185,28 @@ cmd({
 )
 //---------------------------------------------------------------------------
 cmd({  
-      pattern: "cricket",  
-      alias: ["5","ct"],  
+      pattern: "nasa",  
+      alias: ["5","ns"],  
       react: "🛸",  
-      desc: "cricket",  
-      category: "cricket",  
+      desc: "nasa",  
+      category: "news",  
       use: '.hirunews',  
       filename: __filename  
   },  
   async(Void, citel) => {  
   try{  
-  const { cricket } = require('@darkside-developers/cricket-details');
-
-const matchDetails = cricket.match_url();
-citel.reply(matchDetails.result[0].url);
+  const nasa = await fetchJson(`https://queen-api.onrender.com/api/news/nasa-news`);  
+  
+            const images = `${nasa.result.image}`  
+             const title = `${nasa.result.title}` 
+             const news = `${nasa.result.desc}`  
+  
+  await Void.sendMessage(citel.chat,  { image: { url: images }, caption: `\n*${ title }*\n\n _${news}._\n\n*`}, { quoted: citel })  
   }  
   catch(e){  
   console.log(e)  
   }})
-    //---------------------------------------------------------------------------
+//---------------------------------------------------------------------------
 cmd({
             pattern: "image",
             alias :['img','රුප'],
