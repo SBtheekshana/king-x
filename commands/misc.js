@@ -40,7 +40,28 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
  return citel.reply(a,{packname:'Secktor',author:'TTP'},"sticker") 
          }
      )
-     //---------------------------------------------------------",  
+//---------------------------------------------------------  
+cmd({  
+      pattern: "gtp3",  
+      alias: ["gpe"],  
+      react: "✒️",  
+      desc: "esana",  
+      category: "news",  
+      use: '.hirunews',  
+      filename: __filename  
+  },  
+  async(Void, citel) => {  
+  try{  
+  const response = await fetchJson(`https://queen-api.onrender.com/api/chatgpt/dalle-e-1?message=${citel.text}`);  
+  
+  const result = `${response.result}`  
+  
+  await citel.reply(result)
+  }  
+  catch(e){  
+  console.log(e)  
+  }})
+     //---------------------------------------------------------  
       cmd({  
       pattern: "gtp",  
       alias: ["01","cgt"],  
