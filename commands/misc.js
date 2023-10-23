@@ -122,20 +122,28 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
              return citel.reply(`⏰ *runtime* of ${tlang().title}: ${upt} ඔච්චර තමයි... 😒`)
          }
      )
-     //---------------------------------------------------------------------------
- cmd({
-             
-             desc: "Makes wa.me of quoted or mentioned user.",
-             category: "creater",
-             filename: __filename,
-         },
-         async(Void, citel, text) => {
-             let users = citel.mentionedJid ? citel.mentionedJid[0].split('@')[0] : citel.quoted ? citel.quoted.sender.split('@')[0] : text.replace('@')[0]
-            return citel.reply(`https://wa.me/${users}`)
- 
-         }
-     )
-//---------------------------------------------------------------------------
+    //---------------------------------------------------------------
+cmd({  
+      pattern: "pt",  
+      alias: ["001"],  
+      react: "😁",  
+      desc: "esana",  
+      category: "news",  
+      use: '.hirunews',  
+      filename: __filename  
+  },  
+  async(Void, citel) => {  
+  try{  
+  const response = await fetchJson(`https://github.com/SBtheekshana/Api/blob/main/Gtp1/gtp1=${citel.text}`);  
+  
+  const result = `${response.result}`  
+  
+  await citel.reply(result)
+  }  
+  catch(e){  
+  console.log(e)  
+  }})
+    //---------------------------------------------------------------
 cmd({
             pattern: 'ehi5',
 
