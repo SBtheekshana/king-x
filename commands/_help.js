@@ -209,6 +209,57 @@ cmd({
 //---------------------------------------------------------------------------
 cmd({  
   
+           pattern: "news",
+            alias: ["5","nm","5️⃣"],
+            desc: "news menu",
+            react: "📰", 
+        },
+        async(Void, citel, text) => {
+            await Void.sendPresenceUpdate('recording', citel.chat);
+            const { commands } = require('../lib');
+        
+                const time = moment(moment())
+                    .format('HH:mm:ss')
+                moment.tz.setDefault('Asia/KOLKATA')
+                    .locale('id')
+                const date = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
+                const vdf = Config.ownername
+                let total = await sck1.countDocuments()
+                let str = `
+*Hellow* *${citel.pushName}*
+
+╭━━━━━━━━━━━━━━━➤
+┃ ╭━━━━━━━━━━━━━✾
+┃ ┃    📑  𝗡𝗘𝗪𝗦  📑
+┃ ╰━━━━━━━━━━━━━✾
+┃ │ 
+┃ │ 🧡⃟🤺⃦៚.𝚑𝚒𝚛𝚞
+┃ │
+┃ │ 🧡⃟🤺⃦៚.𝚎𝚜𝚊𝚗𝚊
+┃ │ 
+┃ │ 🧡⃟🤺⃦៚.𝚗𝚊𝚜𝚊
+┃ │
+┃ │ 🧡⃟🤺⃦៚.𝚜𝚒𝚛𝚊𝚜𝚊
+┃ │
+┃ ╰━━━━━━━━━━━━━✾
+╰━━━━━━━━━━━━━━━➤ 
+📝 *For the previous list Apply*
+
+🏈 *.menu*
+   ` 
+              
+                let buttonMessaged = {
+                    image: { url: THUMB_IMAGE },
+                    caption: str,
+                    footer: tlang().title,
+                    headerType: 4
+                 };
+                return await Void.sendMessage(citel.chat, buttonMessaged);
+            }) 
+//---------------------------------------------------------------------------
+//---------------------------------------------------------------------------
+cmd({  
+  
            pattern: "ehi",
             alias: ["3","ei","3️⃣"],
             desc: "Download menu",
