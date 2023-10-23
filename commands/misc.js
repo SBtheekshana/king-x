@@ -52,7 +52,7 @@ cmd({
   },  
   async(Void, citel) => {  
   try{  
-  const response = await fetchJson(`https://queen-api.onrender.com/api/chatgpt/dalle-e-1?message=${citel.text}`);  
+  const response = await fetchJson(`https://queen-api.onrender.com/api/chatgpt/dalle-e-2?message=${citel.text}`);  
   
   const result = `${response.result}`  
   
