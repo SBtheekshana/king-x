@@ -195,7 +195,7 @@ cmd({
 ╰━━━━━━━━━━━━━━━━➤
 📝 *For the previous list Apply*
 
-🏈 *.manimenu*
+🏈 *.menu*
    ` 
               
                 let buttonMessaged = {
@@ -249,7 +249,7 @@ cmd({
 ╰━━━━━━━━━━━━━━━━➤
 📝 *For the previous list Apply*
 
-🏈 *.manimenu*
+🏈 *.menu*
    ` 
               
                 let buttonMessaged = {
@@ -311,7 +311,7 @@ cmd({
 ╰━━━━━━━━━━━━━━━━➤
 📝 *For the previous list Apply*
 
-🏈 *.manimenu*
+🏈 *.menu*
    ` 
               
                 let buttonMessaged = {
