@@ -223,7 +223,7 @@ cmd({
   
             const images = `${nasa.result.image}`  
              const title = `${nasa.result.title}` 
-             const news = `${nasa.result.desc}`  
+             const news = `${nasa.result.description}`  
   
   await Void.sendMessage(citel.chat,  { image: { url: images }, caption: `\n*${ title }*\n\n _${news}._\n\n*`}, { quoted: citel })  
   }  
