@@ -211,8 +211,8 @@ cmd({
       pattern: "derana",  
       alias: ["7","dn"],  
       react: "🗞️",  
-      desc: "esana",  
-      category: "news",  
+      desc: "derana",  
+      category: "nes",  
       use: '.hirunews',  
       filename: __filename  
   },  
@@ -233,6 +233,7 @@ cmd({
   catch(e){  
   console.log(e)  
   }})
+
 //---------------------------------------------------------------------------
 cmd({  
       pattern: "nasa",  
