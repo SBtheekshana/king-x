@@ -183,6 +183,26 @@ cmd({
         })
     }
 )
+//---------------------------------------------------------------------------
+cmd({  
+      pattern: "cricket",  
+      alias: ["5","ct"],  
+      react: "🛸",  
+      desc: "cricket",  
+      category: "cricket",  
+      use: '.hirunews',  
+      filename: __filename  
+  },  
+  async(Void, citel) => {  
+  try{  
+  const { cricket } = require('@darkside-developers/cricket-details');
+
+const matchDetails = cricket.match_url();
+citel.reply(matchDetails.result[0].url);
+  }  
+  catch(e){  
+  console.log(e)  
+  }})
     //---------------------------------------------------------------------------
 cmd({
             pattern: "image",
