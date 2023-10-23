@@ -122,28 +122,8 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
              return citel.reply(`⏰ *runtime* of ${tlang().title}: ${upt} ඔච්චර තමයි... 😒`)
          }
      )
-    //---------------------------------------------------------------
-cmd({  
-      pattern: "gtp2",  
-      alias: ["002"],  
-      react: "🕵️‍♂️",  
-      desc: "esana",  
-      category: "news",  
-      use: '.hirunews',  
-      filename: __filename  
-  },  
-  async(Void, citel) => {  
-  try{  
-  const response = await fetchJson(`https://queen-api.onrender.com/api/chatgpt/dalle-e-1?message=${citel.text}`);  
-  
-  const result = `${response.result}`  
-  
-  await citel.reply(result)
-  }  
-  catch(e){  
-  console.log(e)  
-  }})
-    //---------------------------------------------------------------
+    //--------------------------------------------------------------
+  //---------------------------------------------------------------
 cmd({
             pattern: 'ehi5',
 
@@ -151,7 +131,7 @@ cmd({
 
             desc: 'Sends ehi',
 
-            category: "ehi downloader",
+           category: "ehi downloader",
 
             react: "5️⃣",
 
