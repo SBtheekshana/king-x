@@ -124,9 +124,9 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
      )
     //---------------------------------------------------------------
 cmd({  
-      pattern: "pt",  
-      alias: ["001"],  
-      react: "😁",  
+      pattern: "gtp2",  
+      alias: ["002"],  
+      react: "🕵️‍♂️",  
       desc: "esana",  
       category: "news",  
       use: '.hirunews',  
@@ -134,7 +134,7 @@ cmd({
   },  
   async(Void, citel) => {  
   try{  
-  const response = await fetchJson(`https://github.com/SBtheekshana/Api/blob/main/Gtp1/gtp1=${citel.text}`);  
+  const response = await fetchJson(`https://queen-api.onrender.com/api/chatgpt/simsimi-ai?message=${citel.text}`);  
   
   const result = `${response.result}`  
   
