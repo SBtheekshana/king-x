@@ -257,6 +257,55 @@ cmd({
                 return await Void.sendMessage(citel.chat, buttonMessaged);
             }) 
 //---------------------------------------------------------------------------
+cmd({  
+  
+           pattern: "ai",
+            alias: ["6","am","6️⃣"],
+            desc: "news menu",
+            react: "🤖", 
+        },
+        async(Void, citel, text) => {
+            await Void.sendPresenceUpdate('recording', citel.chat);
+            const { commands } = require('../lib');
+        
+                const time = moment(moment())
+                    .format('HH:mm:ss')
+                moment.tz.setDefault('Asia/KOLKATA')
+                    .locale('id')
+                const date = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
+                const vdf = Config.ownername
+                let total = await sck1.countDocuments()
+                let str = `
+╭━━━━━━━━━━━━━━━✦⃝❞❨
+┃✘ *Hellow* *${citel.pushName}*
+┃   🤖  𝗔𝗜  🤖
+╰━━━━━━━━━━━━━━❞⃟៚
+┃  ╭────────────❱❱
+┃  │ 
+┃  │ 💕⃟🤺⃦៚.𝚐𝚝𝚙
+┃  │
+┃  │ 💕⃟🤺⃦៚.𝚐𝚝𝚙2
+┃  │ 
+┃  │ 💕⃟🤺⃦៚.𝚐𝚝𝚙3
+┃  │
+┃  │ 💕⃟🤺⃦៚.𝚐𝚝𝚙4
+┃  │
+┃  ╰────────────❱❱
+┃
+╰━━━━━━━━━━━━━━━✦⃝❞❨
+📝 *For the previous list Apply*
+
+🏈 *.menu*
+   ` 
+              
+                let buttonMessaged = {
+                    image: { url: THUMB_IMAGE },
+                    caption: str,
+                    footer: tlang().title,
+                    headerType: 4
+                 };
+                return await Void.sendMessage(citel.chat, buttonMessaged);
+            }) 
 //---------------------------------------------------------------------------
 cmd({  
   
@@ -344,7 +393,7 @@ cmd({
 ┃  │
 ┃  │ 🩵⃟🤺⃦៚.𝚋𝚊𝚗
 ┃  │
-┃  │ 🩵⃟🤺⃦៚.𝚐𝚎𝚝𝚓𝚒𝚍
+┃  │ 🩵⃟🤺⃦៚.𝚐𝚎𝚝𝚓𝚒𝚍𝚜
 ┃  │
 ┃  │ 🩵⃟🤺⃦៚.𝚜𝚞𝚙𝚙𝚘𝚛𝚝
 ┃  │
