@@ -43,8 +43,8 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
 //---------------------------------------------------------  
 cmd({  
       pattern: "gtp3",  
-      alias: ["gpe"],  
-      react: "✒️",  
+      alias: ["03","cg"],  
+      react: "🐼",  
       desc: "esana",  
       category: "news",  
       use: '.hirunews',  
@@ -54,7 +54,7 @@ cmd({
   try{  
   const response = await fetchJson(`https://queen-api.onrender.com/api/chatgpt/gpt-4?message=${citel.text}`);  
   
-  const images = `${result.image}`  
+  const result = `${response.result}`  
   
   await citel.reply(result)
   }  
