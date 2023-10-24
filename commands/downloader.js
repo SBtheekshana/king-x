@@ -292,7 +292,7 @@ cmd({
   
  🖇️ 𝗨𝗿𝗹 : ${search.all[0].url}
   
- 📚 𝗦𝗶𝘀𝗮𝘀 : ${search.all[0].author}
+ 📚 𝗦𝗶𝘀𝗮𝘀 : $ {search.all[0].fileSizeInMegabytes MB}
   
  ⏳ 𝗗𝘂𝗿𝗮𝘁𝗶𝗼𝗻 : ${search.all[0].duration}
   
