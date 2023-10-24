@@ -326,27 +326,7 @@ await sleep(2000);
   
          } 
      )
-    //---------------------------------------------------------------------------
-cmd({ 
-             pattern: "tiktok", 
-               alias :  ['tt','ttdl','ටික්ටොක්'], 
-             desc: "Downloads Tiktok Videos Via Url.", 
-             category: "downloader", 
-             react: "🎟️",
-             filename: __filename, 
-             use: '<add tiktok url.>' 
-         }, 
-  
-         async(Void, citel, text) => { 
-  if(!text) return await citel.reply(`*Uhh Please, Provide me tiktok Video Url*`); 
-  let txt = text ? text.split(" ")[0]:''; 
-  if (!/tiktok/.test(txt)) return await citel.reply(`*Uhh Please, Give me Valid Tiktok Video Url!*`); 
-  const { status ,thumbnail, video, audio } = await tiktokdl(txt) 
-  //console.log("url : " , video  ,"\nThumbnail : " , thumbnail ,"\n Audio url : " , audio ) 
-  if (status) return await Void.sendMessage(citel.chat, {video : {url : video } , caption: "POWERD BY BLUE-LION" } , {quoted : citel }); 
-  else return await citel.reply("Error While Downloading Your Video")  
- }) 
-    //---------------------------------------------------------------------------
+//---------------------------------------------------------------------------
 cmd({ 
              pattern: "facebook", 
              alias :  ['fb','fbdl','ෆෙසබුක්'], 
