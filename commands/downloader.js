@@ -299,7 +299,6 @@ cmd({
  🧑‍💻 𝗧𝘆𝗽𝗲𝗶𝗻𝗴 :
   .video ${search.all[0].url}  to get video`
                      
- 🎁 𝘃𝗶𝗱𝗲𝗼 𝗰𝗼𝗺𝗲𝗶𝗻𝗴
   let butnMessage = {
                         image: {
                             url: thumbnaill,
