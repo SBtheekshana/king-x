@@ -28,20 +28,21 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/attp/${text}`)
  return citel.reply(a,{packname:'Secktor',author:'ATTP'},"sticker") 
          }
      )
+
  cmd({  
       pattern: "gtp5",  
-      alias: ["g5" "05"],  
-      react: ", 🤖",  
-      desc: "chatgtp",  
-      category: "gtp",  
-      use: '.gtp',  
+      alias: ["05","gn"],  
+      react: "🤖",  
+      desc: "esana",  
+      category: "news",  
+      use: '.hirunews',  
       filename: __filename  
   },  
   async(Void, citel) => {  
   try{  
-  const response = await fetchJson(`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=${citel.text}`);  
+  const response = await fetchJson(`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`);  
   
-  const images = `${nasa.result.image}`   
+  const result = `${response.result}`  
   
   await citel.reply(result)
   }  
