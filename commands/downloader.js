@@ -292,8 +292,6 @@ cmd({
   
  🖇️ 𝗨𝗿𝗹 : ${search.all[0].url}
   
- 📚 𝗦𝗶𝘇𝗲 : ${search.all[0].fileSizeInMegabytes} MB
-  
  ⏳ 𝗗𝘂𝗿𝗮𝘁𝗶𝗼𝗻 : ${search.all[0].duration}
   
  🧑‍💻 𝗧𝘆𝗽𝗲𝗶𝗻𝗴 :
