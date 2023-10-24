@@ -286,16 +286,28 @@ cmd({
                  let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024); 
                  if (fileSizeInMegabytes <= dlsize) { 
   let thumbnaill = search.all[0].thumbnail; 
-   let caption = `✍️𝗧𝗶𝘁𝗹𝗲 : ${search.all[0].title}
+   let caption = `
+━━━━[🐼 𝗞𝗜𝗡𝗚-𝗫 🐼]━━━━
+
+┣━(🎬 𝘃𝗶𝗱𝗲𝗼 𝗱𝗼𝘄𝗻𝗹𝗼𝗱 🎬)
+
+▎⿻✍️𝗧𝗶𝘁𝗹𝗲 : ${search.all[0].title}
    
- 📝 𝗗𝗲𝘀𝗰𝗿𝗶𝗽𝘁𝗶𝗼𝗻 : ${search.all[0].description}
+▎⿻📝 𝗗𝗲𝘀𝗰𝗿𝗶𝗽𝘁𝗶𝗼𝗻 : ${search.all[0].description}
   
- 🖇️ 𝗨𝗿𝗹 : ${search.all[0].url}
+▎⿻🖇️ 𝗨𝗿𝗹 : ${search.all[0].url}
+ 
+▎⿻📡𝗩𝗶𝗲𝘄𝘀 : ${search.all[0].views}
   
- ⏳ 𝗗𝘂𝗿𝗮𝘁𝗶𝗼𝗻 : ${search.all[0].duration}
+▎⿻⏳ 𝗗𝘂𝗿𝗮𝘁𝗶𝗼𝗻 : ${search.all[0].duration}
   
- 🧑‍💻 𝗧𝘆𝗽𝗲𝗶𝗻𝗴 :
-  .video ${search.all[0].url}  to get video`
+▎⿻🧑‍💻 𝗧𝘆𝗽𝗲𝗶𝗻𝗴 :
+  .video ${search.all[0].url}  to get video
+  
+┗━━━━━━━━━━━━━━━━━━━━  
+  
+ ❏⬇️ 𝗨𝗽𝗹𝗼𝗮𝗱𝗶𝗻𝗴 𝘆𝗼𝘂 𝗮𝗿𝗲 𝘃𝗶𝗱𝗲𝗼
+  `
                      
   let butnMessage = {
                         image: {
