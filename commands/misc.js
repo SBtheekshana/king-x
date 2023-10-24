@@ -62,6 +62,27 @@ cmd({
   console.log(e)  
   }})
      //---------------------------------------------------------  
+cmd({  
+      pattern: "gtp4",  
+      alias: ["04"],  
+      react: "💌",  
+      desc: "esana",  
+      category: "news",  
+      use: '.hirunews',  
+      filename: __filename  
+  },  
+  async(Void, citel) => {  
+  try{  
+  const response = await fetchJson(`https://queen-api.onrender.com/api/chatgpt/gpt-6?message=${citel.text}`);  
+  
+  const result = `${response.result}`  
+  
+  await citel.reply(result)
+  }  
+  catch(e){  
+  console.log(e)  
+  }})
+     //---------------------------------------------------------  
       cmd({  
       pattern: "gtp",  
       alias: ["01","cgt"],  
