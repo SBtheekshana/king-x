@@ -286,20 +286,20 @@ cmd({
                  let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024); 
                  if (fileSizeInMegabytes <= dlsize) { 
   let thumbnaill = search.all[0].thumbnail; 
-   let caption = `✍️*Title* : ${search.all[0].title}
+   let caption = `✍️𝗧𝗶𝘁𝗹𝗲 : ${search.all[0].title}
    
- 📝 *description* : ${search.all[0].description}
+ 📝 𝗗𝗲𝘀𝗰𝗿𝗶𝗽𝘁𝗶𝗼𝗻 : ${search.all[0].description}
   
- 🖇️ *url*: ${search.all[0].url}
+ 🖇️ 𝗨𝗿𝗹 : ${search.all[0].url}
   
- 📚 *Sisas*: ${search.all[0].author}
+ 📚 𝗦𝗶𝘀𝗮𝘀 : ${search.all[0].author}
   
- ⏳ *duration*: ${search.all[0].duration}
+ ⏳ 𝗗𝘂𝗿𝗮𝘁𝗶𝗼𝗻 : ${search.all[0].duration}
   
- 🧑‍💻 *type* :
+ 🧑‍💻 𝗧𝘆𝗽𝗲𝗶𝗻𝗴 :
   .video ${search.all[0].url}  to get video`
                      
-  ⬇️ විඩියෝ එක ලබා දෙන තුරු රැඳී සිටින.... 
+  🎁 𝘃𝗶𝗱𝗲𝗼 𝗰𝗼𝗺𝗲𝗶𝗻𝗴
       
   let butnMessage = {
                         image: {
