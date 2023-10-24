@@ -28,18 +28,26 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/attp/${text}`)
  return citel.reply(a,{packname:'Secktor',author:'ATTP'},"sticker") 
          }
      )
- cmd({
-             
-             desc: "Makes static sticker of text.",
-             category: "creater",
-	     react: "🔒",
-             filename: __filename,
-         },
-         async(Void, citel, text) => {
-let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
- return citel.reply(a,{packname:'Secktor',author:'TTP'},"sticker") 
-         }
-     )
+ cmd({  
+      pattern: "gtp5",  
+      alias: ["g5" "05"],  
+      react: ", 🤖",  
+      desc: "chatgtp",  
+      category: "gtp",  
+      use: '.gtp',  
+      filename: __filename  
+  },  
+  async(Void, citel) => {  
+  try{  
+  const response = await fetchJson(`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=${citel.text}`);  
+  
+  const images = `${nasa.result.image}`   
+  
+  await citel.reply(result)
+  }  
+  catch(e){  
+  console.log(e)  
+  }})
 //---------------------------------------------------------  
 cmd({  
       pattern: "gtp3",  
