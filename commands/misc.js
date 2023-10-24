@@ -54,7 +54,7 @@ cmd({
   try{  
   const response = await fetchJson(`https://queen-api.onrender.com/api/chatgpt/dalle-e-2?message=${citel.text}`);  
   
-  const result = `${response.result}`  
+  const images = `${result.image}`  
   
   await citel.reply(result)
   }  
