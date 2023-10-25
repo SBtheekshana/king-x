@@ -31,7 +31,7 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/attp/${text}`)
 
  cmd({  
       pattern: "gtp5",  
-      alias: ["05","gn"],  
+      alias: ["05","g5"],  
       react: "🤖",  
       desc: "esana",  
       category: "news",  
@@ -40,11 +40,22 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/attp/${text}`)
   },  
   async(Void, citel) => {  
   try{  
-  const response = await fetchJson(`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`);  
+  const response = await fetchJson(`https://queen-api.onrender.com/api/chatgpt/dalle-e-1?message=${citel.text}`);  
   
-  const result = `${response.result}`  
+  const images = `${nasa.result.image}`   
   
-  await citel.reply(result)
+
+/////////
+let buttonMessage = {
+                        image: {
+                            url: images,
+                        },
+                        caption: `*Dalle E Image*`,
+                        headerType: 4,
+                    };
+ Void.sendMessage(citel.chat, buttonMessage, {
+                        quoted: citel,
+                    });
   }  
   catch(e){  
   console.log(e)  
