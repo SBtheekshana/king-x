@@ -52,21 +52,40 @@ cmd({
 
     )
      //---------------------------------------------------------------------------smd({pattern: "yts",alias: ["ytsearch","getyt"],desc: "Gives descriptive info of query from youtube..",category: "downloader",filename: __filename,use: '<text>' },
-cmd({pattern: "yts",alias: ["ytsearch","getyt"],desc: "Gives descriptive info of query from youtube..",category: "downloader",filename: __filename,use: '<text>' },
-async(Void, citel, text) => {
-  try{
-  let yts = require("secktor-pack");
-  text = text ? text : citel.quoted && citel.quoted.text ? citel.quoted.text : ""
-  if (!text) return citel.reply(`Example : ${prefix}yts WhatsApp Bot by Suhail Tech`);
-  let search = await yts(text);
-  let textt = "*YouTube Search*\n Result From " + text + "\n   ─────────────────── \n";
-  for (let i of search.all) {
-    textt += `*Title : ${i.title}*${ i.timestamp ? `(${ i.timestamp })` : '' }\n*Url : ${i.url}* \n     *──────────────────*   \n`;
-  }
-  try{ return await citel.send(search.all[0].thumbnail,{caption: textt,},'image',citel) }catch(e){ return await citel.send(textt,{},'',citel)  } 
-}catch(err){console.log("yt search Error :" , err);return await citel.error(`${err} \n\ncmdName : yts` ) }
-})
-     
+cmd({
+        pattern: "yts",
+       alias :['youtubesearch','යූටියුබ්එකෙහොයන්න'],
+        desc: "Gives descriptive info of query from youtube..",
+        category: "search",
+         react: "🔎",
+        filename: __filename,
+        use: '<yt search text>',
+    },
+    async(Void, citel, text) => {
+        let yts = require("secktor-pack");
+        if (!text) return citel.reply(`Example : සුරපප්පා`);
+        let search = await yts(text);
+        let textt = "*YouTube Search*\n\n Result From " + text + "\n\n───────────────────\n";
+        let no = 1;
+        for (let i of search.all) {
+            textt += `⚡ No : ${no++}\n ❤Title : ${i.title}\n♫ Type : ${
+      i.type
+    }\n🙈Views : ${i.views}\n⌛Duration : ${
+      i.timestamp
+    }\n🌟Upload At : ${i.ago}\n👑Author : ${i.author.name}\n🎵Url : ${
+      i.url
+    }\n\n──────────────\n\n`;
+        }
+        return Void.sendMessage(citel.chat, {
+            image: {
+                url: search.all[0].thumbnail,
+            },
+            caption: textt,
+        }, {
+            quoted: citel,
+        });
+    }
+)
 //---------------------------------------------------------------------------
 
 cmd({
