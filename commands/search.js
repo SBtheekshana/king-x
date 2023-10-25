@@ -188,7 +188,7 @@ cmd({
 cmd({  
       pattern: "sirasa",  
       alias: ["04","sn"],  
-      react: "🛸",  
+      react: "📰",  
       desc: "nasa",  
       category: "news",  
       use: '.hirunews',  
@@ -200,7 +200,8 @@ cmd({
   
             const images = `${nasa.result.image}`  
              const title = `${nasa.result.title}` 
-             const news = `${nasa.result.description}`  
+             const news = `${nasa.result.description}` 
+            const url =`${nasa. result. url} `
   
   await Void.sendMessage(citel.chat,  { image: { url: images }, caption: `\n*${ title }*\n\n _${news}._\n\n*`}, { quoted: citel })  
   }  
