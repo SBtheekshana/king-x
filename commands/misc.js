@@ -42,8 +42,7 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/attp/${text}`)
   try{  
   const response = await fetchJson(`https://queen-api.onrender.com/api/chatgpt/dalle-e-1?message=${citel.text}`);  
   
-  const images = `${nasa.result.image}`   
-  
+  const result = `${response.result}`
 
 /////////
 let buttonMessage = {
