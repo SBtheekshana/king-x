@@ -44,8 +44,6 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/attp/${text}`)
   
   const result = `${response.result}`  
   
-  await citel.reply(result)
-  
 let buttonMessage = {
                         image: {
                             url: images,
