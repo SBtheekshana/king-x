@@ -24,18 +24,22 @@ let result = await download(text)
             url: icon,
         },
         caption: `
-        \n─────────────────
-        \n⏳ *Playstore Download*
+        \n┏━━━━━❨🛡️ 𝗞𝗜𝗡𝗚-𝗫 🛡️❩━✘
+        \n▎⿻⏳ *Playstore Download*
         
-        \n📲 *App name:* ${getname}
+        \n▎⿻📲 *App name:* ${getname}
         
-        \n📩 *Last update:* ${lastupdate}
+        \n▎⿻📩 *Last update:* ${lastupdate}
         
-        \n🖥️ *Package name:* ${packagename}
+        \n▎⿻🖥️ *Package name:* ${packagename}
         
-        \n📊 *File size:* ${size}
+        \n▎⿻📊 *File size:* ${size}
         
-        \n💌 𝙰𝙿𝙿 𝙳𝙾𝚆𝙽𝙻𝙾𝙳 ✅`,
+        \n▎⿻💌 𝙰𝙿𝙿 𝙳𝙾𝚆𝙽𝙻𝙾𝙳 ✅
+        \n┗━━━━━━━━━━━━━━━✘
+        `,
+        
+          
     })
     return Void.sendMessage(citel.chat, {
         document: {
